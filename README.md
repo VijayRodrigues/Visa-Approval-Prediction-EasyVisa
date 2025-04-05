@@ -1,4 +1,4 @@
-# 🛂 Visa Approval Prediction - EasyVisa
+# 🛂 Visa Approval Prediction - EasyVisa x OFLC
 
 ## 📘 Project Context
 
@@ -48,30 +48,54 @@ The dataset includes diverse features related to employees and employers, offeri
 
 - Performed **Exploratory Data Analysis (EDA)** to uncover insights.
 - Built various **classification models** to predict visa outcomes.
-- Evaluated models using **accuracy, F1-score, confusion matrix**, etc.
+- Used **GridSearchCV** and **RandomizedSearchCV** for hyperparameter tuning.
+- Evaluated models using **accuracy, F1-score, precision, recall, ROC-AUC**, etc.
 - Deployed the final model using `joblib` for real-world inference.
 
 ---
 
 ## 🛠 Tools & Technologies
 
-- **Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)**
-- **Machine Learning: Decision Tree, Random Forest, XGBoost, etc.**
-- **Model Tuning: GridSearchCV / RandomizedSearchCV**
-- **Model Saving: `joblib`**
-- **Jupyter Notebook** for experiments
+- **Python**: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+- **ML Models**: Decision Tree, Random Forest, Bagging, Gradient Boosting
+- **Tuning**: GridSearchCV, RandomizedSearchCV
+- **Notebook**: Jupyter for analysis and experimentation
 
 ---
 
-## 📈 Outcome
+## 📈 Actionable Insights & Recommendations
 
-- Designed an automated prediction pipeline.
-- Improved processing time and decision quality for visa applications.
-- Identified key drivers such as **education**, **experience**, **wage**, and **full-time status** as major influencers of visa approval.
+### 🔄 Bagging Models
+
+#### ✅ Tuned `BaggingClassifier` (Best Performer)
+
+- **Highest Accuracy & ROC-AUC**: Among all models, Tuned Bagging showed the best predictive performance.
+- **Balanced Report**: Well-distributed precision, recall, and F1-scores across both classes.
+- **Slightly Outperformed Random Forest**: Marginally better results than Tuned Random Forest.
+- **Highlight**: Hyperparameter tuning made a significant difference in model performance.
+
+### 🚀 Boosting Models
+
+#### ✅ Tuned `GradientBoostingClassifier`
+
+- **Accuracy & ROC-AUC**: Achieved **0.7714 accuracy** and **0.8600 ROC-AUC** – highest among all models.
+- **Consistent Metrics**: Delivered strong precision, recall, and F1-scores across both classes.
+- **Better Weighted Averages**: Excellent performance even with class imbalance.
+- **Conclusion**: The best choice for real-world deployment due to its consistent performance across all metrics.
 
 ---
 
-## 💾 Repository Structure
+## 💼 Business Takeaways
+
+- 🌏 **Focus on Asian Regions**: Applicants from Asia form a large portion of approved candidates; recruiting efforts can be intensified here.
+- 📍 **Southern U.S. Advantage**: Higher visa approval rates noted in Southern regions (e.g., Texas); local labor shortages may be favorable for foreign hiring.
+- 💼 **Permanent Positions Preferred**: Candidates applying for permanent roles have a higher approval rate than those applying for contract jobs.
+- 🎓 **Higher Education Pays Off**: Applicants with **Master’s degrees or above** are more likely to get approvals. Educational attainment is a strong predictor of success.
+- 📊 **Data-Driven Shortlisting**: The company can implement this model into their recruitment pipeline for quicker, more accurate decisions.
+
+---
+
+## 🗂 Repository Structure
 
 ```bash
 📁 visa-approval-prediction/
